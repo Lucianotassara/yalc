@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./head'); %>
+</head>
+<body class="container p-3 mb-2 bg-dark text-white .bg-gradient-light">
+  
+        <img src="img/lucho.jpg" class="lucho">
+        <h1>Luciano Tassara</h1>
+        <div class="jumbotron bg-secondary">
+         <header>
+        <%- include('./header'); %>
+    </header>  
+  <main>
+            <!-- <ul> -->
+                <% links.forEach(function(link) { %>
+                    <a class="btn btn-dark btn-block" href="/l/<%=link.shortUrl%>" role="button">
+                        
+                        <i class="fab <%=link.faIcon%>"></i>
+                        <%=link.nombre%>
+                        <span class="badge badge-danger"><%=link.requests%></span>
+                    </a>  
+                <% }); %>
+            <!-- </ul> -->
+
+           
+        
+            
+            
+        </div>
+    </main>
+
+    <footer>
+        <%- //include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>
