@@ -13,7 +13,7 @@ yalcController.route('/').get(
 //    async (req, res) => {
     // let links = await Url.find({}).exec();
 
-   (req, res) => {    
+   (req, res) => {
         let links = Url.find({}).exec();
         
         console.log(links);
