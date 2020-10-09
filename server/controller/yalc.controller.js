@@ -41,7 +41,7 @@ yalcController.route('/list').get(
 );
 
 //POST Crear nuevo enlace
-yalcController.route('/').post(
+yalcController.route('/link').post(
     async (req, res) => 
     {
         let urlobject = {
