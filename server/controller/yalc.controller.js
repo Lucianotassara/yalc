@@ -10,12 +10,8 @@ const yalcController = express.Router();
 
 // GET MAIN endpoint
 yalcController.route('/').get(
-//    async (req, res) => {
-    // let links = await Url.find({}).exec();
-
-   (req, res) => {
-        let links = Url.find({}).exec();
-        
+   async (req, res) => {
+    let links = await Url.find({}).exec();  
         console.log(links);
  
         res.render('index', {links: links});
