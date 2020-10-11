@@ -32,25 +32,25 @@ passport.use(
              //if not, create a new user 
 
             
-            var profile = currentUser.get().getBasicProfile();
-            console.log('ID: ' + profile.getId());
-            console.log('Full Name: ' + profile.getName());
-            console.log('Given Name: ' + profile.getGivenName());
-            console.log('Family Name: ' + profile.getFamilyName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail());
+            let perfilito = currentUser.get().getBasicProfile();
+            console.log('ID: ' + perfilito.getId());
+            console.log('Full Name: ' + perfilito.getName());
+            console.log('Given Name: ' + perfilito.getGivenName());
+            console.log('Family Name: ' + perfilito.getFamilyName());
+            console.log('Image URL: ' + perfilito.getImageUrl());
+            console.log('Email: ' + perfilito.getEmail());
             
 
 
             new User({
-              googleId: profile.id,
-              id: profile.getId(),
-              fullName:profile.getName(),
-              givenName:profile.getGivenName(),
-              familyName:profile.getFamilyName(),
-              imageURL:profile.getImageUrl(),
-              email: profile.getEmail()
-              
+              googleId: profile.id
+              // id: profile.getId(),
+              // fullName:profile.getName(),
+              // givenName:profile.getGivenName(),
+              // familyName:profile.getFamilyName(),
+              // imageURL:profile.getImageUrl(),
+              // email: profile.getEmail()
+
             }).save().then((newUser) =>{
               done(null, newUser);
             });
