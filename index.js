@@ -25,6 +25,13 @@ passport.use(
       // passport callback function
       //check if user already exists in our db with the given profile ID
       User.findOne({googleId: profile.id}).then((currentUser)=>{
+        let perfilito = currentUser.get().getBasicProfile();
+            console.log('ID: ' + perfilito.getId());
+            console.log('Full Name: ' + perfilito.getName());
+            console.log('Given Name: ' + perfilito.getGivenName());
+            console.log('Family Name: ' + perfilito.getFamilyName());
+            console.log('Image URL: ' + perfilito.getImageUrl());
+            console.log('Email: ' + perfilito.getEmail());
         if(currentUser){
           //if we already have a record with the given profile ID
           done(null, currentUser);
@@ -32,13 +39,7 @@ passport.use(
              //if not, create a new user 
 
             
-            let perfilito = currentUser.get().getBasicProfile();
-            console.log('ID: ' + perfilito.getId());
-            console.log('Full Name: ' + perfilito.getName());
-            console.log('Given Name: ' + perfilito.getGivenName());
-            console.log('Family Name: ' + perfilito.getFamilyName());
-            console.log('Image URL: ' + perfilito.getImageUrl());
-            console.log('Email: ' + perfilito.getEmail());
+            
             
 
 
