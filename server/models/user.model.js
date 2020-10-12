@@ -23,7 +23,11 @@ var UserSchema = new Schema({
   },
   lastAccessed: {
       type: Date
-  }
+  },
+  urls:[{
+    type: Schema.Types.ObjectId,
+    ref: "Url"
+  }]
 });
 
 module.exports = mongoose.model('User', UserSchema);

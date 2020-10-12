@@ -7,6 +7,10 @@ import { User } from '../models';
 
 const loginController = express.Router();
 
+loginController.get("/login", (req, res) => {
+  res.send({message: 'login work\'s'});
+});
+
 loginController.get("/auth/google", passport.authenticate("google", {
     scope: ["profile", "email"]
 }));

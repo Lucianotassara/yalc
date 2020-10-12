@@ -25,6 +25,10 @@ var UrlSchema = new Schema({
   },
   lastAccessed: {
       type: Date
+  },
+  owner:{
+    type: Schema.Types.ObjectId,
+    ref: "User"
   }
 });
 
