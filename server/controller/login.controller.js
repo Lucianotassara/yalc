@@ -31,6 +31,7 @@ loginController.get("/auth/logout", (req, res) => {
     (req, res) => {
       // res.send({message: 'login work\'s'});
 
+      
         res.render('form', {
             title: "Login", //page title
             action: "/login", //post action for the form
