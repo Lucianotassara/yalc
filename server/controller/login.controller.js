@@ -23,8 +23,8 @@ loginController.get("/auth/google/redirect",passport.authenticate("google"),(req
   });
 
 loginController.get("/auth/logout", (req, res) => {
-    req.logout();
     res.send(req.user);
+    req.logout();
   });
 
 //   loginController.route('/login').get(
