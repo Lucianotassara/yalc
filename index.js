@@ -22,36 +22,21 @@ passport.use(
         clientSecret: process.env.YALC_GOOGLE_SECRET,
         callbackURL: '/auth/google/redirect'
   }, (accessToken, refreshToken, profile, done) => {
+
       // passport callback function
-      //check if user already exists in our db with the given profile ID
+      // check if user already exists in our db with the given profile ID
       User.findOne({googleId: profile.id}).then((currentUser)=>{
-        let perfilito = currentUser.get().getBasicProfile();
-            console.log('ID: ' + perfilito.getId());
-            console.log('Full Name: ' + perfilito.getName());
-            console.log('Given Name: ' + perfilito.getGivenName());
-            console.log('Family Name: ' + perfilito.getFamilyName());
-            console.log('Image URL: ' + perfilito.getImageUrl());
-            console.log('Email: ' + perfilito.getEmail());
+        
+        
         if(currentUser){
+
           //if we already have a record with the given profile ID
           done(null, currentUser);
         } else{
+
              //if not, create a new user 
-
-            
-            
-            
-
-
             new User({
               googleId: profile.id
-              // id: profile.getId(),
-              // fullName:profile.getName(),
-              // givenName:profile.getGivenName(),
-              // familyName:profile.getFamilyName(),
-              // imageURL:profile.getImageUrl(),
-              // email: profile.getEmail()
-
             }).save().then((newUser) =>{
               done(null, newUser);
             });
