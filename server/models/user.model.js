@@ -12,7 +12,13 @@ var UserSchema = new Schema({
   email: {
     type: String
   },
-  profilePicture: {
+  picture: {
+    type: String
+  },
+  displayName: {
+    type: String
+  },
+  email: {
     type: String
   },
   lastAccessed: {

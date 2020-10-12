@@ -38,7 +38,10 @@ passport.use(
 
              //if not, create a new user 
             new User({
-              googleId: profile.id
+              googleId: profile.id,
+              picture: profile._json.picture,
+              displayName: profile.displayName,
+              email: profile._json.email
             }).save().then((newUser) =>{
               done(null, newUser);
             });

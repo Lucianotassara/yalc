@@ -16,6 +16,16 @@ yalcController.route('/').get(
     }
   );
 
+// GET MAIN endpoint
+yalcController.route('/profile').get(
+    async (req, res) => {
+     let links = await Url.find({}).exec();  
+         console.log(links);
+         res.render('index', {links: links});
+     }
+   );
+
+
   //GET Acceder a un enlace corto
 yalcController.route('/l/:shortUrl').get(
     (req, res) => {
