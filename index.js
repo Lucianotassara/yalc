@@ -50,6 +50,19 @@ passport.use(
     })
 );
 
+const app = express();
+
+// const session = require('express-session');
+
+// app.use(session({
+//   secret: 'secret string',
+//   resave: false,
+//   saveUninitialized: false,
+//   cookie: { test: 'jaja', sarasa: 'jeje' }
+// }));
+
+
+
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
@@ -60,12 +73,16 @@ passport.deserializeUser((id, done) => {
   });
 })
 
-const app = express();
+
 
 app.use(cookieSession({
   // milliseconds of a day
   maxAge: 24*60*60*1000,
-  keys:[process.env.YALC_COOKIE_KEY]
+  keys:[{
+    valor: process.env.YALC_COOKIE_KEY,
+    test: 'jaja',
+    test2: 'jeje'
+  }]
 }));
 
 app.use(passport.initialize());
