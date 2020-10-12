@@ -78,11 +78,11 @@ passport.deserializeUser((id, done) => {
 app.use(cookieSession({
   // milliseconds of a day
   maxAge: 24*60*60*1000,
-  keys:[{
-    valor: process.env.YALC_COOKIE_KEY,
-    test: 'jaja',
-    test2: 'jeje'
-  }]
+  keys:[
+    process.env.YALC_COOKIE_KEY,
+    'jaja',
+    'jeje'
+  ]
 }));
 
 app.use(passport.initialize());
