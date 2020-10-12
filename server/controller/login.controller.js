@@ -2,14 +2,10 @@ import express from 'express';
 var mongoose = require('mongoose');
 const passport = require("passport");
 
-
 import { User } from '../models';
 
 const loginController = express.Router();
 
-loginController.get("/login", (req, res) => {
-  res.send({message: 'login work\'s'});
-});
 
 loginController.get("/auth/google", passport.authenticate("google", {
     scope: ["profile", "email"]
@@ -31,17 +27,19 @@ loginController.get("/auth/logout", (req, res) => {
     req.logout();
   });
 
-//   loginController.route('/login').get(
-//     (req, res) => {
-//         res.render('form', {
-//             title: "Login", //page title
-//             action: "/login", //post action for the form
-//             fields: [
-//             {name:'email',type:'text',property:'required'},   //first field for the form
-//             {name:'password',type:'password',property:'required'}   //another field for the form
-//             ]
-//         });
-// });
+  loginController.route('/login').get(
+    (req, res) => {
+      // res.send({message: 'login work\'s'});
+
+        res.render('form', {
+            title: "Login", //page title
+            action: "/login", //post action for the form
+            fields: [
+            {name:'email',type:'text',property:'required'},   //first field for the form
+            {name:'password',type:'password',property:'required'}   //another field for the form
+            ]
+        });
+});
 
 
   
