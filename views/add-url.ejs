@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./head'); %>
+</head>
+<body class="container-fluid p-3 mb-2 bg-dark text-white .bg-gradient-light">
+
+    <div class="row  justify-content-md-center">
+        <div class="col perfil">
+            <img src="img/lucho.jpg" class="lucho">
+            <h1>Luciano Tassara</h1>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 jumbotron bg-secondary">
+            <%- include('./header'); %>
+            <% links.forEach(function(link) { %>
+                <a class="btn btn-lg btn-dark btn-block" href="/l/<%=link.shortUrl%>" role="button">
+                    
+                    <i class="fab <%=link.faIcon%>"></i>
+                    <%=link.nombre%>
+                    <span class="badge cosito"><%=link.requests%></span>
+                </a>  
+            <% }); %>
+        </div>
+        <div class="col-1"></div>
+
+    </div>
+
+
+    <footer>
+        <%- //include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>

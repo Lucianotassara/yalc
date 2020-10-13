@@ -1,35 +1,35 @@
-'use strict';
-var mongoose = require('mongoose');
+"use strict";
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var UrlSchema = new Schema({
   nombre: {
-    type: String
+    type: String,
   },
   url: {
-    type: String
+    type: String,
   },
   faIcon: {
     type: String,
   },
   shortUrl: {
-    type: String
+    type: String,
   },
   requests: {
-      type: Number,
-      default: 0
+    type: Number,
+    default: 0,
   },
   createdAt: {
-      type: Date,
-      default: Date.now
+    type: Date,
+    default: Date.now,
   },
   lastAccessed: {
-      type: Date
+    type: Date,
   },
-  owner:{
+  owner: {
     type: Schema.Types.ObjectId,
-    ref: "User"
-  }
+    ref: "User",
+  },
 });
 
-module.exports = mongoose.model('Url', UrlSchema);
+module.exports = mongoose.model("Url", UrlSchema);

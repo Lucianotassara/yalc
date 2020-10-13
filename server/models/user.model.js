@@ -1,33 +1,35 @@
-'use strict';
-var mongoose = require('mongoose');
+"use strict";
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
   nombre: {
-    type: String
+    type: String,
   },
   googleId: {
-    type: String
+    type: String,
   },
   email: {
-    type: String
+    type: String,
   },
   picture: {
-    type: String
+    type: String,
   },
   displayName: {
-    type: String
+    type: String,
   },
   email: {
-    type: String
+    type: String,
   },
   lastAccessed: {
-      type: Date
+    type: Date,
   },
-  urls:[{
-    type: Schema.Types.ObjectId,
-    ref: "Url"
-  }]
+  urls: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Url",
+    },
+  ],
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model("User", UserSchema);
