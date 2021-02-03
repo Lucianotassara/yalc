@@ -43,4 +43,16 @@ loginController.route("/login").get((req, res) => {
   });
 });
 
+loginController.get(
+  '/users' ,
+  (req, res) => {
+    User.find({}, (err, result) => {
+      res.status(200).json(result/*{
+        //data: result,
+        result
+      }*/);
+    });
+  }
+);
+
 export default loginController;
