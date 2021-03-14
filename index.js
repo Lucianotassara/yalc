@@ -94,7 +94,7 @@ app.all("/", function (req, res, next) {
 });
 
 const portYalcApi = process.env.YALC_API_PORT || 3007;
-const mongoDBUri = process.env.YALC_MONGO_URI;
+const mongoDBUri = process.env.YALC_EVIDA_MONGO_URI;
 const mongoHostName = process.env.YALC_MONGO_HOSTNAME;
 
 app.listen(portYalcApi, () => {
