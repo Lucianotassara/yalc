@@ -20,6 +20,10 @@
             <% links.forEach(function(link) { %>
                 <a class="btn btn-lg btn-dark btn-block" href="/l/<%=link.shortUrl%>" role="button">
                     
+                    <%if (link.pinned) { %>
+                        <i id="pinchecito" class="fas fa-thumbtack"></i>
+                        <% } %>
+                    
                     <i class="fab <%=link.faIcon%>"></i>
                     <%=link.nombre%>
                     <span class="badge cosito"><%=link.requests%></span>

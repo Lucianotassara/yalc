@@ -24,3 +24,10 @@
 .button{
     min-height: 5em;
 }
+
+#pinchecito{
+    transform: rotate(320deg);
+    color: lightgray;
+    margin-right: 2%;
+    
+}
