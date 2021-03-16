@@ -15,7 +15,7 @@ yalcController.route("/").get(async (req, res) => {
       // res.json(n);
     }).sort({
        "pinned": -1, 
-       "createdAt": -1
+       "createdAt": 1
       }).exec();
 
     console.log(links);
