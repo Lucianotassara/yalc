@@ -8,16 +8,12 @@ const yalcController = express.Router();
 
 // GET MAIN endpoint
 yalcController.route("/").get(async (req, res) => {
-    // let links = await Url.find({}).exec();
-
     let links = await Url.find({}, function (err, n) {
       if (err) res.send(err);
-      // res.json(n);
     }).sort({
        "pinned": -1, 
        "createdAt": 1
       }).exec();
-
     console.log(links);
     res.render("index", { links: links });
 });
@@ -49,7 +45,7 @@ yalcController.route("/list").get((req, res) => {
     res.json(n);
   }).sort({
      "pinned": -1, 
-     "createdAt": -1
+     "createdAt": 1
     });
 });
 
