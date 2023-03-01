@@ -18,7 +18,7 @@
         <div class="col-10 jumbotron bg-secondary">
             <%- include('./header'); %>
             <% links.forEach(function(link) { %>
-                <a class="btn btn-lg btn-dark btn-block" href="/l/<%=link.shortUrl%>" role="button">
+                <a class="btn btn-lg btn-dark btn-block" href="/l/<%=link.shortUrl%>" target="_blank" role="button">
                     
                     <i class="fab <%=link.faIcon%>"></i>
                     <%=link.nombre%>
