@@ -79,4 +79,16 @@ yalcController.route("/:id").delete(async (req, res) => {
   });
 });
 
+yalcController.route('/link/:linkId').put(
+  async (req, res) => 
+  {
+  mongoose.set('useFindAndModify', false); 
+  Url.findOneAndUpdate({_id: req.params.linkId}, req.body, {new: true}, function(err, i) {
+      if (err)
+          res.send(err);
+      res.json(i);
+      });
+  }
+);
+
 export default yalcController;
